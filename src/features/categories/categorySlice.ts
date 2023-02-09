@@ -50,20 +50,12 @@ export const categorySlice = createSlice({
       builder.addCase(fetchCategories.rejected, (state, action) => {
         state.loading = false
         state.categories = []
-        console.log(action.payload)
         if(action.payload) { 
           state.fetchError = action.payload.error.message }
-        console.log(`${action.error} he`)
       })
     },
   });
-
- /* function stateS (state: RootState)  {
-    return console.log(`${state.category.fetchError.error}`)
-  }(state)
-   */
   
-
 export const { setCategories } = categorySlice.actions;
 
 export const selectCategoriesReducer = (state: RootState) => {

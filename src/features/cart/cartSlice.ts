@@ -42,7 +42,6 @@ const cartSlice = createSlice({
         ];
       }
     },
-
     removeItemFromCart: (state, {payload}: PayloadAction<CartItem>) => {
       const existingCartItem = state.cartItems.find(
         (cartItem) => cartItem.id === payload.id
@@ -58,7 +57,6 @@ const cartSlice = createSlice({
           : cartItem
       );
     },
-
     clearItemFromCart: (state, {payload}: PayloadAction<CartItem>) => {
       state.cartItems = state.cartItems.filter(
         (cartItem) => cartItem.id !== payload.id
@@ -67,7 +65,6 @@ const cartSlice = createSlice({
     clearCart: (state) => {
       state.cartItems = [];
     },
-
     setIsCartOpen: (state, {payload}: PayloadAction<boolean>) => {
       state.isCartOpen = payload;
     },
