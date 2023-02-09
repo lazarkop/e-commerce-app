@@ -1,5 +1,3 @@
-import { useDispatch, useSelector } from 'react-redux';
-
 import {
   selectCartCount,
   selectIsCartOpen,
@@ -8,11 +6,12 @@ import { setIsCartOpen } from '../../features/cart/cartSlice';
 import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg';
 
 import { CartIconContainer, ItemCount } from './cart-icon.styles';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
 const CartIcon = () => {
-  const dispatch = useDispatch();
-  const isCartOpen = useSelector(selectIsCartOpen);
-  const cartCount = useSelector(selectCartCount);
+  const dispatch = useAppDispatch();
+  const isCartOpen = useAppSelector(selectIsCartOpen);
+  const cartCount = useAppSelector(selectCartCount);
 
   const toggleIsCartOpen = () => dispatch(setIsCartOpen(!isCartOpen));
 

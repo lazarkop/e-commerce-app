@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 import { selectCartItems } from '../../features/cart/cartSlice';
 import Button from '../button/button.component';
@@ -10,9 +9,10 @@ import {
   EmptyMessage,
   CartItems,
 } from './cart-dropdown.styles';
+import { useAppSelector } from '../../app/hooks';
 
 const CartDropdown = () => {
-  const cartItems = useSelector(selectCartItems);
+  const cartItems = useAppSelector(selectCartItems);
   const navigate = useNavigate();
 
   const goToCheckoutHandler = () => {

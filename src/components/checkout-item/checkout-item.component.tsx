@@ -1,4 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { FC } from 'react';
+
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
 import {
   clearItemFromCart,
@@ -17,17 +19,23 @@ import {
   RemoveButton,
 } from './checkout-item.styles';
 
-const CheckoutItem = ( {cartItem} ) => {
+import { CartItem } from '../../features/cart/cartSlice';
+
+type CheckoutItemProps = {
+  cartItem: CartItem;
+};
+
+const CheckoutItem: FC<CheckoutItemProps> = ( {cartItem} ) => {
   const { name, imageUrl, price, quantity } = cartItem;
-  const dispatch = useDispatch();
-  const cartItems = useSelector(selectCartItems);
+  const dispatch = useAppDispatch();
+  const cartItems = useAppSelector(selectCartItems);
   const product = cartItem;
   
-  const clearItemHandler = () => dispatch(clearItemFromCart( {cartItems, product} ));
+  const clearItemHandler = () => dispatch(clearItemFromCart( cartItem ));
 
   const addItemHandler = () => dispatch(addItemToCart( {cartItems, product} ));
 
-  const removeItemHandler = () => dispatch(removeItemFromCart( {cartItems, product} ));
+  const removeItemHandler = () => dispatch(removeItemFromCart( cartItem ));
 
   return (
     <CheckoutItemContainer>

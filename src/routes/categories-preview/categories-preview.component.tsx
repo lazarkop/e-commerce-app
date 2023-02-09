@@ -1,13 +1,13 @@
 import { Fragment } from 'react';
-import { useSelector } from 'react-redux';
 import {selectCategoriesMap, selectIsLoading } from '../../features/categories/categorySlice'
 
 import CategoryPreview from '../../components/category-preview/category-preview.component';
 import Spinner from '../../components/spinner/spinner.component';
+import { useAppSelector } from '../../app/hooks';
 
 const CategoriesPreview = () => {
- const categoriesMap = useSelector(selectCategoriesMap);
- const isLoading = useSelector(selectIsLoading);
+ const categoriesMap = useAppSelector(selectCategoriesMap);
+ const isLoading = useAppSelector(selectIsLoading);
 
   return (
     <Fragment>
