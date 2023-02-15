@@ -38,7 +38,6 @@ export const categorySlice = createSlice({
         state.fetchError = ""
       })
       builder.addCase(fetchCategories.rejected, (state, action) => {
-        console.log(action.error)
         state.loading = false
         state.categories = []
         state.fetchError = action.error.message as string
