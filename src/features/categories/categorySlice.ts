@@ -15,17 +15,7 @@ const initialState: CategoryState = {
   fetchError: "",
 };
 
-interface MyError  {
-  error: Error 
-}
-
-export const fetchCategories = createAsyncThunk<
-Category[], // Returned type
-void, // Params
-{
-  rejectValue:  MyError// Error type
-}
->('category/fetchCategories', async () => {
+export const fetchCategories = createAsyncThunk('category/fetchCategories', async () => {
   const response = await getCategoriesAndDocuments()
   return response
 })
@@ -48,10 +38,10 @@ export const categorySlice = createSlice({
         state.fetchError = ""
       })
       builder.addCase(fetchCategories.rejected, (state, action) => {
+        console.log(action.error)
         state.loading = false
         state.categories = []
-        if(action.payload) { 
-          state.fetchError = action.payload.error.message }
+        state.fetchError = action.error.message as string
       })
     },
   });
