@@ -16,12 +16,14 @@ export const NavigationContainer = styled.div`
 `;
 
 export const LogoContainer = styled(Link)`
+  display: flex;
+  align-items: center;
   height: 100%;
-  width: 70px;
+  width: 120px;
   padding: 25px;
 
   @media screen and (max-width: 800px) {
-    width: 50px;
+    width: 90px;
     padding: 0px;
   }
 `;

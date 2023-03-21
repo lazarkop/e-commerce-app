@@ -9,7 +9,7 @@ import { useAppSelector } from '../../app/hooks';
 import { selectCurrentUser } from '../../features/user/userSlice';
 import { selectIsCartOpen } from '../../features/cart/cartSlice';
 
-import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
+import { ReactComponent as CrwnLogo } from '../../assets/logo-svg.svg';
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
 import {
