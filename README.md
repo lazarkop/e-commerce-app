@@ -1,5 +1,14 @@
 # E-Commerce Clothing App Project
 
+## Main tools used: 
++ React
++ Firebase 
++ Netlify 
++ Stripe
++ Redux-toolkit
++ Typescript
++ Styled Components
+
 ## Users should be able to:
 
 + Use home page directory to navigate to appropriate shop page
@@ -9,5 +18,5 @@
 + Be able to view all items in the cart dropdown
 + Be able to view all items in checkout page as well as increase and decrease their number, or remove items from cart
 + View Total cost for all items in cart
-+ Click PAY NOW button after entering Stripe test card number(4242 4242...), any date in the future and  random numbers for the rest, which will alert the user that payment was successful
++ Click PAY NOW button after entering Stripe test card number(4242 4242...), any date in the future and random numbers for the rest, which will alert the user that payment was successful
 
