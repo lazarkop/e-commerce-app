@@ -1,6 +1,6 @@
 # E-Commerce Clothing App Project
 
-### App is deployed on this URL: https://whimsical-madeleine-c6a4ab.netlify.app/
+### App is deployed and can be accessed on this URL: https://whimsical-madeleine-c6a4ab.netlify.app/
 
 
 ## Main tools used: 
